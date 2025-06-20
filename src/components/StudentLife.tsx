@@ -120,20 +120,23 @@ const StudentLife = () => {
           {/* Club Navigation */}
           <div className="flex flex-wrap justify-center mb-8">
             <div className="backdrop-blur-lg bg-white/10 rounded-2xl p-2 border border-white/20">
-              {clubs.map((club, index) => (
-                <button
-                  key={index}
-                  onClick={() => setActiveClub(index)}
-                  className={`px-4 py-2 rounded-xl font-medium transition-all duration-300 flex items-center space-x-2 ${
-                    activeClub === index
-                      ? `bg-gradient-to-r ${club.color} text-white shadow-lg`
-                      : 'text-white/80 hover:text-white hover:bg-white/10'
-                  }`}
-                >
-                  <club.icon size={20} />
-                  <span>{club.name}</span>
-                </button>
-              ))}
+              {clubs.map((club, index) => {
+                const IconComponent = club.icon;
+                return (
+                  <button
+                    key={index}
+                    onClick={() => setActiveClub(index)}
+                    className={`px-4 py-2 rounded-xl font-medium transition-all duration-300 flex items-center space-x-2 ${
+                      activeClub === index
+                        ? `bg-gradient-to-r ${club.color} text-white shadow-lg`
+                        : 'text-white/80 hover:text-white hover:bg-white/10'
+                    }`}
+                  >
+                    <IconComponent size={20} />
+                    <span>{club.name}</span>
+                  </button>
+                );
+              })}
             </div>
           </div>
 
@@ -143,7 +146,7 @@ const StudentLife = () => {
               <div>
                 <div className="flex items-center space-x-4 mb-6">
                   <div className={`w-16 h-16 bg-gradient-to-r ${clubs[activeClub].color} rounded-2xl flex items-center justify-center`}>
-                    <clubs[activeClub].icon className="text-white" size={32} />
+                    {React.createElement(clubs[activeClub].icon, { className: "text-white", size: 32 })}
                   </div>
                   <div>
                     <h4 className="text-2xl font-bold text-white">{clubs[activeClub].name}</h4>
@@ -188,7 +191,7 @@ const StudentLife = () => {
                   <Trophy className="text-white" size={28} />
                 </div>
                 <h4 className="text-xl font-bold text-white text-center mb-2">{house.name}</h4>
-                <p className="text-white/70 text-center text-sm italic">"{house.motto}"</p>
+                <p className="text-white/70 text-center text-sm italic">&quot;{house.motto}&quot;</p>
               </div>
             ))}
           </div>
@@ -198,28 +201,31 @@ const StudentLife = () => {
         <div className="mb-16">
           <h3 className="text-3xl font-bold text-white mb-8 text-center">Regular Competitions</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {competitions.map((competition, index) => (
-              <div key={index} className="backdrop-blur-lg bg-white/10 rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300">
-                <div className="w-12 h-12 bg-gradient-to-r from-teal-400 to-cyan-500 rounded-xl flex items-center justify-center mb-4">
-                  <competition.icon className="text-white" size={24} />
+            {competitions.map((competition, index) => {
+              const CompetitionIcon = competition.icon;
+              return (
+                <div key={index} className="backdrop-blur-lg bg-white/10 rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300">
+                  <div className="w-12 h-12 bg-gradient-to-r from-teal-400 to-cyan-500 rounded-xl flex items-center justify-center mb-4">
+                    <CompetitionIcon className="text-white" size={24} />
+                  </div>
+                  <h4 className="text-lg font-bold text-white mb-2">{competition.name}</h4>
+                  <div className="space-y-1 text-sm">
+                    <div className="flex items-center justify-between">
+                      <span className="text-white/70">Type:</span>
+                      <span className="text-teal-400">{competition.type}</span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-white/70">Frequency:</span>
+                      <span className="text-white/80">{competition.frequency}</span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-white/70">Participants:</span>
+                      <span className="text-cyan-400">{competition.participants}</span>
+                    </div>
+                  </div>
                 </div>
-                <h4 className="text-lg font-bold text-white mb-2">{competition.name}</h4>
-                <div className="space-y-1 text-sm">
-                  <div className="flex items-center justify-between">
-                    <span className="text-white/70">Type:</span>
-                    <span className="text-teal-400">{competition.type}</span>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-white/70">Frequency:</span>
-                    <span className="text-white/80">{competition.frequency}</span>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-white/70">Participants:</span>
-                    <span className="text-cyan-400">{competition.participants}</span>
-                  </div>
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
 
