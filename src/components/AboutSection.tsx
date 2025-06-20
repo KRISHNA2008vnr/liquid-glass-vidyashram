@@ -12,7 +12,7 @@ const AboutSection = () => {
             About <span className="bg-gradient-to-r from-teal-400 to-cyan-500 bg-clip-text text-transparent">Pon Vidyashram</span>
           </h2>
           <p className="text-xl text-white/80 max-w-3xl mx-auto">
-            A legacy of educational excellence spanning over two decades, shaping minds and building character
+            A legacy of educational excellence spanning over 23 years, affiliated with CBSE and dedicated to nurturing future leaders
           </p>
         </div>
 
@@ -28,9 +28,9 @@ const AboutSection = () => {
                 <h3 className="text-2xl font-bold text-white">Our Vision</h3>
               </div>
               <p className="text-white/80 leading-relaxed">
-                To be a globally recognized institution that nurtures holistic development, 
-                fostering creativity, critical thinking, and character building in every student 
-                to become responsible global citizens.
+                To impart holistic education for the development of future leaders of this nation 
+                through an efficient and smart team of teachers, connecting students to the 
+                "unfailing source" of knowledge and wisdom.
               </p>
             </div>
 
@@ -41,11 +41,12 @@ const AboutSection = () => {
                 </div>
                 <h3 className="text-2xl font-bold text-white">Our Mission</h3>
               </div>
-              <p className="text-white/80 leading-relaxed">
-                To provide quality education that emphasizes academic excellence, moral values, 
-                and life skills, preparing students to face future challenges with confidence 
-                and contribute positively to society.
-              </p>
+              <div className="text-white/80 leading-relaxed space-y-2">
+                <p>• To provide excellent learning experience through talented staff and latest technology</p>
+                <p>• To value and develop different talents of students for future challenges</p>
+                <p>• To help students reach their highest level of academic performance</p>
+                <p>• To create an environment for "HAPPY STUDENTS"</p>
+              </div>
             </div>
           </div>
 
@@ -56,15 +57,15 @@ const AboutSection = () => {
                 <Heart className="text-white" size={20} />
               </div>
               <h4 className="text-lg font-semibold text-white mb-2">Holistic Development</h4>
-              <p className="text-white/70 text-sm">Balanced focus on academics, sports, arts, and character building</p>
+              <p className="text-white/70 text-sm">23+ years of comprehensive education focusing on academics, character, and values</p>
             </div>
 
             <div className="backdrop-blur-md bg-white/10 rounded-2xl p-6 border border-white/20 hover:scale-105 transition-all duration-300">
               <div className="w-10 h-10 bg-gradient-to-r from-green-400 to-emerald-500 rounded-lg flex items-center justify-center mb-4">
                 <Shield className="text-white" size={20} />
               </div>
-              <h4 className="text-lg font-semibold text-white mb-2">Safe Environment</h4>
-              <p className="text-white/70 text-sm">Secure campus with dedicated counseling and safety measures</p>
+              <h4 className="text-lg font-semibold text-white mb-2">CBSE Affiliation</h4>
+              <p className="text-white/70 text-sm">All branches affiliated with CBSE, New Delhi with NEET examination center status</p>
             </div>
 
             <div className="backdrop-blur-md bg-white/10 rounded-2xl p-6 border border-white/20 hover:scale-105 transition-all duration-300">
@@ -72,16 +73,29 @@ const AboutSection = () => {
                 <Users className="text-white" size={20} />
               </div>
               <h4 className="text-lg font-semibold text-white mb-2">Expert Faculty</h4>
-              <p className="text-white/70 text-sm">Qualified and experienced teachers committed to student success</p>
+              <p className="text-white/70 text-sm">Well-qualified, experienced teachers with modern teaching methodologies</p>
             </div>
 
             <div className="backdrop-blur-md bg-white/10 rounded-2xl p-6 border border-white/20 hover:scale-105 transition-all duration-300">
               <div className="w-10 h-10 bg-gradient-to-r from-red-400 to-rose-500 rounded-lg flex items-center justify-center mb-4">
                 <BookHeart className="text-white" size={20} />
               </div>
-              <h4 className="text-lg font-semibold text-white mb-2">Value Education</h4>
-              <p className="text-white/70 text-sm">Strong emphasis on moral values and ethical leadership</p>
+              <h4 className="text-lg font-semibold text-white mb-2">Excellence Awards</h4>
+              <p className="text-white/70 text-sm">Spell Bee recognition for linguistic excellence and proactive pedagogies</p>
             </div>
+          </div>
+        </div>
+
+        {/* School Motto */}
+        <div className="text-center mb-16">
+          <div className="backdrop-blur-lg bg-white/10 rounded-3xl p-8 border border-white/20">
+            <h3 className="text-3xl font-bold text-white mb-4">School Motto</h3>
+            <div className="text-2xl text-teal-400 font-bold mb-4">"TRANSFORMING LIVES INTO LEGACIES"</div>
+            <p className="text-white/80 leading-relaxed max-w-3xl mx-auto">
+              We believe that education brings real transformation in oneself and society. 
+              Imparting knowledge develops the mind which enables the individual to gain Pure Consciousness, 
+              developing students' all-round personality - Mentally, Socially and Spiritually.
+            </p>
           </div>
         </div>
 
@@ -91,21 +105,23 @@ const AboutSection = () => {
             <h3 className="text-2xl font-bold text-white mb-4">Chairman's Message</h3>
             <div className="border-l-4 border-teal-400 pl-6">
               <p className="text-white/80 italic leading-relaxed mb-4">
-                "Education is the most powerful weapon which you can use to change the world. 
-                At Pon Vidyashram, we believe in nurturing not just intelligent minds, but compassionate hearts."
+                "Our mission is to inspire and empower young students with innate talents. 
+                We help them to churn out the essence of their potential knowledge which helps them 
+                to achieve their professional goals."
               </p>
-              <p className="text-teal-400 font-medium">- Chairman, Pon Vidyashram Group</p>
+              <p className="text-teal-400 font-medium">- Shri. M. K. Rajagopalan, Chairman</p>
             </div>
           </div>
 
           <div className="backdrop-blur-lg bg-white/10 rounded-3xl p-8 border border-white/20">
-            <h3 className="text-2xl font-bold text-white mb-4">Director's Message</h3>
+            <h3 className="text-2xl font-bold text-white mb-4">Quality Policy</h3>
             <div className="border-l-4 border-cyan-400 pl-6">
               <p className="text-white/80 italic leading-relaxed mb-4">
-                "Our commitment is to provide a learning environment that fosters creativity, 
-                critical thinking, and character development, preparing students for global challenges."
+                "We provide a child-friendly environment which is conducive for learning. 
+                We are committed to promote responsible citizenship by instilling values of 
+                discipline, tolerance, compassion, and willingness to serve society."
               </p>
-              <p className="text-cyan-400 font-medium">- Director, Academic Affairs</p>
+              <p className="text-cyan-400 font-medium">- Pon Vidyashram Quality Policy</p>
             </div>
           </div>
         </div>

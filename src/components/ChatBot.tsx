@@ -1,4 +1,3 @@
-
 import React, { useState, useRef, useEffect } from 'react';
 import { X, Send, MessageCircle, Minimize2, Maximize2 } from 'lucide-react';
 
@@ -11,7 +10,7 @@ const ChatBot: React.FC<ChatBotProps> = ({ isOpen, onClose }) => {
   const [messages, setMessages] = useState([
     {
       id: 1,
-      text: "Hello! I'm PV SmartBot, your virtual assistant for Pon Vidyashram. How can I help you today?",
+      text: "Hello! I'm PV SmartBot, your virtual assistant for Pon Vidyashram Group of Senior Secondary Schools. How can I help you today?",
       sender: 'bot',
       timestamp: new Date()
     }
@@ -32,42 +31,54 @@ const ChatBot: React.FC<ChatBotProps> = ({ isOpen, onClose }) => {
   const quickReplies = [
     'Admission Process',
     'Fee Structure',
-    'Infrastructure',
+    'Campus Locations',
     'Academic Curriculum',
     'Contact Information',
-    'Campus Tour'
+    'CBSE Affiliation'
   ];
 
   const botResponses: { [key: string]: string } = {
-    'admission': 'Our admission process involves 4 simple steps: Application submission, Document verification, Parent-student interaction, and Fee payment. Would you like detailed information about any specific step?',
-    'fee': 'Our fee structure varies by class and campus. Please contact our admission office at +91 44 2222 3333 for detailed fee information, or visit our main campus for a consultation.',
-    'infrastructure': 'We have world-class infrastructure including smart classrooms, science labs, computer labs, library, sports facilities, and more. Each campus is equipped with modern amenities for holistic education.',
-    'curriculum': 'We follow CBSE curriculum from LKG to Class XII with focus on both academic excellence and character building. Our curriculum includes regular subjects plus co-curricular activities.',
-    'contact': 'Main Campus: +91 44 2222 3333, Email: info@ponvidyashram.edu.in. We have 4 campuses across Chennai - Chromepet, Pallavaram, Tambaram, and Chitlapakkam.',
-    'tour': 'We conduct campus tours every Saturday from 10 AM to 12 PM. Please call +91 44 2222 3333 to schedule your visit or you can walk in during these hours.'
+    'admission': 'Admissions for 2025-2026 are open for classes KG to 9 and class 11. Age criteria: KG1 requires minimum 4 years, Class 1 requires minimum 6 years. Contact our admission office at +91 9360 40 70 70 for detailed enrollment process information.',
+    'fee': 'Annual fees vary by campus: Injambakkam campus approximately ₹54,000, Madipakkam campus around ₹90,000. Please contact your specific campus directly for the most accurate and up-to-date fee information.',
+    'infrastructure': 'We have state-of-the-art infrastructure including well-equipped classrooms, laboratories, libraries, CCTV surveillance, transportation services, and dedicated spaces for extracurricular activities across all four campuses.',
+    'curriculum': 'We follow CBSE curriculum from KG to Class XII. Our comprehensive curriculum includes English, Tamil, Hindi, Mathematics, Science, Social Science, Computer Science, and various skill development programs with focus on holistic education.',
+    'contact': 'We have 4 campuses: Valasaravakkam (044 24767072), Kolapakkam (044 48603357), Velachery (044 49528276), Injambakkam (7401841351). Main email: info@ponvidyashram.edu.in',
+    'campus': 'Our 4 campuses are located at: 1) Valasaravakkam - Sapthagiri Nagar, Arcot Road, 2) Kolapakkam - Mugalivakkam, Maxworth Nagar Phase II, 3) Velachery - Thirugnana Sambandhar Street, Srinivasa Nagar, 4) Injambakkam - Vidyashram Garden, East Coast Road.',
+    'achievements': 'We are proud of our academic excellence with multiple state board toppers, NEET examination center status, Spell Bee recognition for linguistic excellence, and over 500+ awards won by our students in various competitions.',
+    'cbse': 'All branches of Pon Vidyashram are affiliated with CBSE, New Delhi. We have been selected as a NEET examination center, reflecting our commitment to academic excellence and standardized curriculum.',
+    'timing': 'School timings vary by campus and grade: Valasaravakkam (9:00am-12:00pm for Pre-KG to 8:30am-3:40pm for higher classes), Injambakkam (9:15am-12:15pm for Pre-KG to 8:45am-4:00pm for higher classes).',
+    'transport': 'We provide safe transportation services with bus routes covering various parts of Chennai. Contact your respective campus for specific route information and availability.'
   };
 
   const generateBotResponse = (userMessage: string): string => {
     const message = userMessage.toLowerCase();
     
-    if (message.includes('admission') || message.includes('apply')) {
+    if (message.includes('admission') || message.includes('apply') || message.includes('enroll')) {
       return botResponses.admission;
-    } else if (message.includes('fee') || message.includes('cost') || message.includes('price')) {
+    } else if (message.includes('fee') || message.includes('cost') || message.includes('price') || message.includes('tuition')) {
       return botResponses.fee;
-    } else if (message.includes('infrastructure') || message.includes('facilities')) {
+    } else if (message.includes('infrastructure') || message.includes('facilities') || message.includes('lab') || message.includes('library')) {
       return botResponses.infrastructure;
-    } else if (message.includes('curriculum') || message.includes('subjects') || message.includes('academic')) {
+    } else if (message.includes('curriculum') || message.includes('subjects') || message.includes('academic') || message.includes('syllabus')) {
       return botResponses.curriculum;
-    } else if (message.includes('contact') || message.includes('phone') || message.includes('email')) {
+    } else if (message.includes('contact') || message.includes('phone') || message.includes('email') || message.includes('address')) {
       return botResponses.contact;
-    } else if (message.includes('tour') || message.includes('visit') || message.includes('campus')) {
-      return botResponses.tour;
+    } else if (message.includes('campus') || message.includes('location') || message.includes('branch')) {
+      return botResponses.campus;
+    } else if (message.includes('achievement') || message.includes('topper') || message.includes('award') || message.includes('excellence')) {
+      return botResponses.achievements;
+    } else if (message.includes('cbse') || message.includes('affiliation') || message.includes('board') || message.includes('neet')) {
+      return botResponses.cbse;
+    } else if (message.includes('timing') || message.includes('hours') || message.includes('schedule')) {
+      return botResponses.timing;
+    } else if (message.includes('transport') || message.includes('bus') || message.includes('travel')) {
+      return botResponses.transport;
     } else if (message.includes('hello') || message.includes('hi') || message.includes('hey')) {
-      return "Hello! Welcome to Pon Vidyashram. I'm here to help you with information about admissions, academics, infrastructure, and more. What would you like to know?";
+      return "Hello! Welcome to Pon Vidyashram Group of Senior Secondary Schools. We have been providing quality education for over 23 years across 4 campuses in Chennai. What would you like to know?";
     } else if (message.includes('thank')) {
-      return "You're welcome! Is there anything else you'd like to know about Pon Vidyashram?";
+      return "You're welcome! Is there anything else you'd like to know about Pon Vidyashram? I can help with admissions, academics, campus information, or any other queries.";
     } else {
-      return "I'd be happy to help you with information about Pon Vidyashram! You can ask me about admissions, fee structure, infrastructure, academics, or contact details. What specific information are you looking for?";
+      return "I'd be happy to help you with information about Pon Vidyashram Group of Senior Secondary Schools! You can ask me about admissions, fee structure, campus locations, CBSE curriculum, achievements, or contact details. What specific information are you looking for?";
     }
   };
 

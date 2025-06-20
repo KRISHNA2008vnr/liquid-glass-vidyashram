@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { MapPin, Phone, Mail, Clock, MessageSquare } from 'lucide-react';
 
@@ -26,32 +25,36 @@ const ContactSection = () => {
 
   const campuses = [
     {
-      name: 'Main Campus - Chromepet',
-      address: 'No. 123, GST Road, Chromepet, Chennai - 600044',
-      phone: '+91 44 2222 3333',
-      email: 'chromepet@ponvidyashram.edu.in',
-      timings: 'Mon-Fri: 8:00 AM - 4:00 PM'
+      name: 'Valasaravakkam Campus',
+      address: 'Sapthagiri Nagar, Arcot Road, Behind Saravana Bhavan, Valasaravakkam, Porur, Chennai - 600 116',
+      phone: '044 24767072, 24762203, 24766778/79',
+      mobile: '9840617337',
+      email: 'valasaravakkam@ponvidyashram.edu.in',
+      timings: 'Mon-Fri: 8:30 AM - 3:40 PM'
     },
     {
-      name: 'Branch Campus - Pallavaram',
-      address: 'No. 456, Main Road, Pallavaram, Chennai - 600043',
-      phone: '+91 44 2222 4444',
-      email: 'pallavaram@ponvidyashram.edu.in',
-      timings: 'Mon-Fri: 8:00 AM - 4:00 PM'
+      name: 'Kolapakkam Campus',
+      address: 'Mugalivakkam, 1st Main Rd, Maxworth Nagar Phase II, Kolapakkam, Chennai - 600 122',
+      phone: '044 48603357',
+      mobile: '7708068369',
+      email: 'kolapakkam@ponvidyashram.edu.in',
+      timings: 'Mon-Fri: 8:30 AM - 3:40 PM'
     },
     {
-      name: 'Senior Secondary - Tambaram',
-      address: 'No. 789, East Main Road, Tambaram, Chennai - 600045',
-      phone: '+91 44 2222 5555',
-      email: 'tambaram@ponvidyashram.edu.in',
-      timings: 'Mon-Fri: 8:00 AM - 4:00 PM'
+      name: 'Velachery Campus',
+      address: '42 Thirugnana Sambandhar Street, 1st Main Road, Velachery, Srinivasa Nagar, Madipakkam, Chennai - 600 091',
+      phone: '044 49528276, 49528277',
+      mobile: '9382306060',
+      email: 'velachery@ponvidyashram.edu.in',
+      timings: 'Mon-Fri: 8:30 AM - 3:40 PM'
     },
     {
-      name: 'KG Campus - Chitlapakkam',
-      address: 'No. 321, West Street, Chitlapakkam, Chennai - 600064',
-      phone: '+91 44 2222 6666',
-      email: 'chitlapakkam@ponvidyashram.edu.in',
-      timings: 'Mon-Fri: 8:30 AM - 3:30 PM'
+      name: 'Injambakkam Campus',
+      address: 'Vidyashram Garden, (opp. VGP Golden Beach) East Coast Road, Injambakkam, Chennai - 600 115',
+      phone: '7401841351',
+      mobile: '7708065491',
+      email: 'injambakkam@ponvidyashram.edu.in',
+      timings: 'Mon-Fri: 8:45 AM - 4:00 PM'
     }
   ];
 
@@ -64,7 +67,7 @@ const ContactSection = () => {
             Get In <span className="bg-gradient-to-r from-teal-400 to-cyan-500 bg-clip-text text-transparent">Touch</span>
           </h2>
           <p className="text-xl text-white/80 max-w-3xl mx-auto">
-            Ready to begin your child's educational journey? We're here to help with any questions you may have.
+            Ready to begin your child's educational journey with Pon Vidyashram? We're here to help with any questions you may have.
           </p>
         </div>
 
@@ -140,12 +143,12 @@ const ContactSection = () => {
                   <Phone className="text-white" size={24} />
                 </div>
                 <div>
-                  <h4 className="text-xl font-bold text-white">Call Us</h4>
+                  <h4 className="text-xl font-bold text-white">Admission Helpline</h4>
                   <p className="text-white/80">Speak with our admission team</p>
                 </div>
               </div>
-              <p className="text-teal-400 font-medium">+91 44 2222 3333</p>
-              <p className="text-white/70 text-sm">Available Monday to Friday, 8:00 AM - 4:00 PM</p>
+              <p className="text-teal-400 font-medium">+91 9360 40 70 70</p>
+              <p className="text-white/70 text-sm">Available Monday to Friday, 8:30 AM - 4:00 PM</p>
             </div>
 
             <div className="backdrop-blur-lg bg-white/10 rounded-2xl p-6 border border-white/20">
@@ -168,12 +171,12 @@ const ContactSection = () => {
                   <MessageSquare className="text-white" size={24} />
                 </div>
                 <div>
-                  <h4 className="text-xl font-bold text-white">WhatsApp</h4>
-                  <p className="text-white/80">Quick assistance via chat</p>
+                  <h4 className="text-xl font-bold text-white">Chairman's Office</h4>
+                  <p className="text-white/80">Direct communication</p>
                 </div>
               </div>
-              <p className="text-teal-400 font-medium">+91 9876 543 210</p>
-              <p className="text-white/70 text-sm">Available during school hours</p>
+              <p className="text-teal-400 font-medium">Shri. M. K. Rajagopalan</p>
+              <p className="text-white/70 text-sm">Chairman, Pon Vidyashram Group</p>
             </div>
           </div>
         </div>
@@ -196,7 +199,10 @@ const ContactSection = () => {
                   
                   <div className="flex items-center space-x-3">
                     <Phone className="text-cyan-400" size={18} />
-                    <p className="text-white/80 text-sm">{campus.phone}</p>
+                    <div>
+                      <p className="text-white/80 text-sm">{campus.phone}</p>
+                      {campus.mobile && <p className="text-white/60 text-xs">Mobile: {campus.mobile}</p>}
+                    </div>
                   </div>
                   
                   <div className="flex items-center space-x-3">
